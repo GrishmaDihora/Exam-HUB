@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exam Hub-Courses</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'course/course.css' %}" />
+	<link rel="shortcut icon" type="image/png" href="{% static 'exam_home/images/exam_hub_small.png' %}"/>
+</head>
+<body>
+<header>
+		<div class="header-inner">
+			<a href="/" id="logo"></a>
+			<nav>
+				<a href="#" id="menu-icon"></a>
+				<ul>
+					<li><a href="/" >Home</a></li>
+					<li><a href="/loginmodule/login/">Login</a></li>
+					<li><a href="/course/reqdisplay/" class="current">Courses</a></li>
+					<li><a href="/teacher/main/" >Teacher</a></li>
+					<li><a href="/contact/page/" >Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+<!--Header tag completed..{% static 'exam_home/images' %}.-->
+
+
+<form action="/course/display/" method="POST">
+    {% csrf_token %}
+    <table>
+        <tr><td><br></td></tr>
+        <tr><td><br></td></tr>
+        <tr><td>
+            <h3>Select Teacher:</h3>
+        </td><td>
+<select name="teacher" class='custom-select' >
+    <option value="" hidden>Select Teacher</option>
+    {% for t in teacher %}
+        <option value="{{ t.teacher_name }}">{{ t.teacher_name }}</option>
+    {% endfor %}
+</select>
+        </td>
+		</tr>
+        <tr><td><br></td></tr>
+        <tr>
+<td colspan="2"><input type="submit" value="Search"></td>
+        </tr>
+		<tr><td><br><br></td></tr>
+		<tr>
+			<td>Click Here to <a href="/teacher/courses/" target="_blank" >View All Courses</a> </td>
+		</tr>
+</table>
+</form>
+
+</body>
+</html>

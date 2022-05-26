@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exam Hub-Confirm!</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'course/course.css' %}" />
+	<link rel="shortcut icon" type="image/png" href="{% static 'exam_home/images/exam_hub_small.png' %}"/>
+</head>
+<body>
+<div class="confirm">
+    Are You Sure You want to Start Exam of<br> Course ID -  {{ course_id }}....<br>
+    Be Sure That Once Started It can't be stoped.<br>
+    Once Question Attempted it can't be deselected.<br>
+    <a href="/course/startexam/">YES</a>
+</div>
+</body>
+</html>

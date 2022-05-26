@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exam Hub-View Courses</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'course/course.css' %}" />
+	<link rel="shortcut icon" type="image/png" href="{% static 'exam_home/images/exam_hub_small.png' %}"/>
+</head>
+<body>
+    {% block content %}
+<h1>Available Courses List</h1>
+{% if course_list %}
+<ul>
+{% for course in course_list %}
+<li>
+{{ course.course_name }} -
+({{course.course_id}}) - {{ course.teacher_name}}
+</li>
+{% endfor %}
+</ul>
+{% else %}
+<p>There are no courses registered.</p>
+{% endif %}
+<p> Click <a href="/teacher/main/">here</a> to add new record. </p>
+{% endblock %}
+</body>
+</html>

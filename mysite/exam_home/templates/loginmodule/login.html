@@ -1,0 +1,53 @@
+<html>
+<head>
+    {% load static %}
+    <title>Exam Hub-Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'loginmodule/login.css' %}" />
+	<link rel="shortcut icon" type="image/png" href="{% static 'loginmodule/images/exam_hub_small.png' %}"/>
+
+</head>
+<body>
+<header>
+		<div class="header-inner">
+			<a href="/" id="logo"></a>
+			<nav>
+				<a href="#" id="menu-icon"></a>
+				<ul>
+					<li><a href="/home/" >Home</a></li>
+					<li><a href="/loginmodule/login/" class="current">Login</a></li>
+					<li><a href="/course/reqdisplay/">Courses</a></li>
+					<li><a href="/teacher/main/" >Teacher</a></li>
+					<li><a href="/contact/page/">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+<!--Header tag completed...-->
+<center>
+{% block content %}
+	{% endblock %}</center>
+    {% if form.errors %}
+        <p class="error" xmlns="http://www.w3.org/1999/html"> Invalid Username or Password </p>
+    {% endif %}
+
+<div class="loginbox">
+        <img src="{% static 'loginmodule/images/exam_hub_medium_red.png' %}" alt="exam HUb Logo">
+        <form action="/loginmodule/auth/" method = "post">
+            {% csrf_token %}
+            <p><label for="username">user name : </label></p>
+            <input type="text" name = "username" value = "" id="username" placeholder="Enter your username" required>
+            <p><label for="password"> Password:</label></p>
+            <input type="password" name="password" value="" id="password" placeholder="Enter your password" required>
+            <input type="submit" value="login"/><br>
+                <a href="#">Forgot your password?</a><br>
+                <a href="/signup/">Don't have account? Sign up</a>
+        </form>
+    </div>
+    <footer class="second">
+			<p>&copy; Exam Hub.</p>
+		</footer>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <title>Exam Hub-Teacher-Courses</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'teacher/uploadQuestion.css' %}" />
+	<link rel="shortcut icon" type="image/png" href="{% static 'loginmodule/images/exam_hub_small.png' %}"/>
+</head>
+<body>
+<header>
+		<div class="header-inner">
+			<a href="/" id="logo"></a>
+			<nav>
+				<a href="#" id="menu-icon"></a>
+				<ul>
+					<li><a href="/" >Home</a></li>
+					<li><a href="/loginmodule/login/">Login</a></li>
+					<li><a href="/course/reqdisplay/">Courses</a></li>
+					<li><a href="/teacher/main/" class="current">Teacher</a></li>
+					<li><a href="/contact/page/" >Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+<!--Header tag completed...-->
+
+<h2>Courses Of Teacher -{{ tname }}</h2>
+{% if courses %}
+<ul>
+{% for c in courses %}
+<li>
+{{ c.course_name }} <a href="/teacher/reqaddquestion/{{tname}}/{{c.course_id}}/">Add Questions</a>
+</li>
+    {% endfor %}
+</ul><br>
+{% else %}
+<br><br>
+ NO COURSES
+{% endif %}
+<br><br>To add a New Course click <a href="/teacher/reqaddcourse/{{tname}}/">Here</a>
+</body>
+</html>

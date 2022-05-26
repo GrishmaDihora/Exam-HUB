@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+*{
+	margin: 0;
+	padding: 0;
+	border:0;
+}
+body{
+	font-family: 'Playfair Display', serif;
+}
+header{
+	background-color:#4374a5;
+	width: 100%;
+	height: 80px;
+}
+#header-inner{
+	max-width: 1200px;
+	height: auto;
+	margin: 0 auto;
+}
+#logo{
+	margin: 20px;
+	float: left;
+	width: 200px;
+	height: 60px;
+	background: url('images/exam_hub_medium.png') no-repeat center;
+}
+
+/*Navigation starts here----------*/
+nav{
+	float: right;
+	padding: 20px 25px 0 0;
+}
+ul{
+	list-style-type: none;
+}
+nav ul li{
+	font-family: 'Playfair Display', serif;
+	font-size: 150%;
+	display: inline-block;
+	float: left;
+	padding: 10px;
+}
+nav ul li a{
+	text-decoration: none;
+	color: #343b3d;
+}
+nav ul li a:hover{
+	color: #b2c1c4;
+}
+.current{
+	color: #b2c1c4;
+}
+h2{
+	font-size: 200%;
+}
+p{
+	font-size: 20px;
+	font-weight: 155%;
+
+}
+input[type="text"],input[type="password"]{
+	border: none;
+	border-bottom: 1px solid grey;
+	background: transparent;
+	height: 40px;
+	color: #000;
+	font-size: 16px;
+	width: 100%;
+}
+input[type="date"]{
+	border-bottom: 1px solid grey;
+	height: 40px;
+	color: #000;
+	border-radius: 2px;
+	width: 100%;
+	background: unset;
+}
+.Profile{
+	padding-top: 15px;
+	padding-bottom: 10px;
+}
+tr td{
+	padding: 7px;
+}
+textarea{
+	border-radius: 3px;
+	background: transparent;
+	border: 1px solid grey;
+	color: #000;
+
+}
+input[type="submit"],input[type="reset"]{
+	border: none;
+	outline: none;
+	height: 40px;
+	font-size: 18px;
+	background: #4a5c7a; 
+	color:#fff;
+	width: 30%;
+	border-radius: 20px;
+}
+input[type="submit"]:hover,input[type="reset"]:hover{
+	cursor: pointer;
+	background-color: blue;
+	color: #fff;
+}
+footer.second{
+	/*border-top: 2px solid green;*/
+	background-color:#4374a5;
+	max-height: 60px;
+	margin: 0;
+	color: #fff;
+}
+footer.second p{
+	padding: 5px 0 6px 0;
+	text-align: center;
+}

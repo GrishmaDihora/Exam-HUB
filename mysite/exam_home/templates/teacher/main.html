@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <title>Exam Hub-Teacher Module</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'teacher/uploadQuestion.css' %}" />
+	<link rel="shortcut icon" type="image/png" href="{% static 'loginmodule/images/exam_hub_small.png' %}"/>
+</head>
+<body>
+<header>
+		<div class="header-inner">
+			<a href="/" id="logo"></a>
+			<nav>
+				<a href="#" id="menu-icon"></a>
+				<ul>
+					<li><a href="/" >Home</a></li>
+					<li><a href="/loginmodule/login/">Login</a></li>
+					<li><a href="/course/reqdisplay/">Courses</a></li>
+					<li><a href="/teacher/main/" class="current">Teacher</a></li>
+					<li><a href="/contact/page/" >Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+<!--Header tag completed...-->
+	<form action="/teacher/validate/" method="post">
+    <table>
+		{% csrf_token %}
+        <tr>
+            <td>Validate Yourself as a Teacher.</td>
+        </tr>
+		<tr>
+			<td><font color="red">
+				{% if wrong %}
+				{{ wrong }}
+				{% endif %}<br></font>
+			</td>
+		</tr>
+		<tr>
+			<td>Teacher Name :</td><td><input type="text" name="tname"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" value="Validate"></td>
+		</tr>
+		<tr>
+			<td>
+				Register as a new <a href="/teacher/reqaddteacher/">Teacher</a>
+			</td>
+		</tr>
+    </table>
+	</form>
+</body>
+</html>
